@@ -1,0 +1,30 @@
+There's almost a "no shit" aspect to the idea of placing the idea for a set of plans in these files. 
+
+For now, let's focus on what is sought from this page. 
+
+Profile info (Side Column set to the far righthand side of the page)
+
+    Contains
+     * Basic Info (Email, Company, Role, isPremium?)
+
+
+Usage (I see this being divided into 4 quadrants, which for outlining purposes go clockwise starting at the top lefthand)
+    
+    Quadrant 1 (Usage Statistics)
+        * This will be visualized as a pie chart
+            - A simple hover effect will reveal the specific usage stats
+    
+    Quadrant 2 (Upcoming Deadlines)
+     * May not be the funnest thing for the users, but it shows them what is forthcoming. 
+        - It will prioritze deadlines based on priority/due date
+            (If something is high priority but a week out, it will be prioritized over something low priority that's due tomorrow)
+        - Details of the tasks, as well as relevant materials in the app will appear on hover
+
+    Quadrant 3 (Teams)
+    * This will be impacted based on whether or not a person is a team leader or not
+    * At baseline there will be an expandable list of teams in this quadrant that one will be able to expand by clicking a down arrow, and close by clicking an up arrow
+        - Should a person be the leader of their team, there will be an icon next to their name, say a king icon, but this is tbd
+    * Members of a team will be able to message each other
+        - This is not yet needed, so I will not code this out quite yet. 
+    
+    Quadrant 4 (TBD)

@@ -9,7 +9,7 @@ export const getForCurrentUser = query({
     }
     return await ctx.db
       .query('messages')
-      .filter((q) => q.eq(q.field('author'), identity.email))
+      .filter((q) => q.eq(q.field('user'), identity.email))
       .collect()
   },
 }) 

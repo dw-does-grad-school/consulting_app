@@ -1,6 +1,14 @@
 'use client'
 
+import Link from 'next/link'
 import { SignInButton, UserButton, useUser } from '@clerk/nextjs'
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuLink,
+} from '@/components/ui/navigation-menu'
+import { cn } from '@/lib/utils'
 
 export default function Navbar() {
   const { isSignedIn } = useUser()
@@ -8,10 +16,57 @@ export default function Navbar() {
   return (
     <nav className="border-b border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
       <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-4">
           {/* App Name */}
-          <div className="text-xl font-bold text-zinc-900 dark:text-zinc-50">
+          <Link
+            href="/"
+            className="text-xl font-bold text-zinc-900 dark:text-zinc-50 hover:opacity-80 transition-opacity"
+          >
             Consulting App
+          </Link>
+
+          {/* Navigation Menu - centered */}
+          <div className="flex-1 flex justify-center">
+            <NavigationMenu viewport={false}>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link
+                      href="/chat"
+                      className={cn(
+                        "group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium text-zinc-900 dark:text-zinc-50 hover:bg-zinc-100 hover:underline dark:hover:bg-zinc-800  transition-colors"
+                      )}
+                    >
+                      Chat Agent
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link
+                      href="/pricing"
+                      className={cn(
+                        "group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium text-zinc-900 dark:text-zinc-50 hover:bg-zinc-100 hover:underline dark:hover:bg-zinc-800 transition-colors"
+                      )}
+                    >
+                      Pricing
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link
+                      href="/profile"
+                      className={cn(
+                        "group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium text-zinc-900 dark:text-zinc-50 hover:bg-zinc-100 hover:underline dark:hover:bg-zinc-800 transition-colors"
+                      )}
+                    >
+                      Profile
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
           </div>
 
           {/* Right side: User avatar or Sign in button */}
